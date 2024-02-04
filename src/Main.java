@@ -2,15 +2,36 @@ public class Main {
     public static void main(String[] args) {
         //Задача 1
         System.out.println("Задача 1");
-        //task1();
+        task1();
         //Задача 2
         System.out.println("Задача 2");
-        //task2();
+        task2();
         //Задача 3
         System.out.println("Задача 3");
-
+        task3();
     }
 
+    private static void task3() {
+        int deliveryDistance = 95;
+        int deliveryTime = deliveryTime(deliveryDistance);
+        if (deliveryTime == -1) {
+            System.out.println("Доставки нет");
+        } else {
+            System.out.println("Потребуется дней: " + deliveryTime);
+        }
+    }
+
+    private static int deliveryTime(int deliveryDistance) {
+        int deliveryTime = 1;
+        if (deliveryDistance > 20 && deliveryDistance <= 60) {
+            deliveryTime++;
+        } else if (deliveryDistance > 60) {
+            deliveryTime += 2;
+        } else if (deliveryDistance > 100) {
+            deliveryTime = -1;
+        }
+        return deliveryTime;
+    }
     private static void task2() {
         int clientOS = 1;
         int clientDeviceYear = 2020;
